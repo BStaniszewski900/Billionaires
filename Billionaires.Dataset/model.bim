@@ -1,0 +1,1647 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Billionairs\",\"Country\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.126.1261.0 (24.02)"
+      },
+      {
+        "name": "__TEdtr",
+        "value": "1"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DaxQueryView_Desktop\",\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "353e31eb-c4b2-4876-ac4e-6041de3a5c61",
+        "fromColumn": "birthDate",
+        "fromTable": "Billionairs",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_9de9bae0-e753-493b-b81b-911080f33457"
+      },
+      {
+        "name": "3df744a2-f76a-4b7f-966c-0487aaa803cb",
+        "fromColumn": "date",
+        "fromTable": "Billionairs",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_ec0e3ee3-4f1d-44ca-b679-8cdb47b6c61b"
+      },
+      {
+        "name": "6c29d28b-6591-4da6-8381-ac616550784c",
+        "fromColumn": "country",
+        "fromTable": "Billionairs",
+        "toColumn": "country",
+        "toTable": "Country"
+      }
+    ],
+    "sourceQueryCulture": "pl-PL",
+    "tables": [
+      {
+        "name": "Billionairs",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Wealth_Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "description": "The final net worth of the billionaire in U.S. dollars.",
+            "formatString": "#,0",
+            "lineageTag": "2aeda4d8-0fb7-4438-b380-2e3ed326d8e8",
+            "sourceColumn": "Wealth_Value",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5f6db1f8-84cf-40d6-b4b2-fd8bffa92844",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7c190b98-7693-4cbd-8d4f-8dc9c8d0e06c",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "industries",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "description": "The industries associated with the billionaire's business interests.",
+            "lineageTag": "4ecf6c65-7bf0-4d09-8d19-cb9c9cf2a22a",
+            "sourceColumn": "industries",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "countryOfCitizenship",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "53465a93-a980-40f2-b9c3-32bcc1841ba2",
+            "sourceColumn": "countryOfCitizenship",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "selfMade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "description": "Indicates whether the billionaire is self-made (True/False).",
+            "lineageTag": "959ab1e2-b538-4dab-b4d2-c3b2132a17e0",
+            "sourceColumn": "selfMade",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b79f026e-b8f4-4a5a-953a-6d13e8d9fe44",
+            "sourceColumn": "gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "birthDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "f5f7a4d9-bf03-408f-bb14-a0e85af42b9b",
+            "sourceColumn": "birthDate",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_9de9bae0-e753-493b-b81b-911080f33457"
+                },
+                "isDefault": true,
+                "relationship": "353e31eb-c4b2-4876-ac4e-6041de3a5c61"
+              }
+            ]
+          },
+          {
+            "name": "date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "1340ad97-f40b-44e4-b489-026b919b9524",
+            "sourceColumn": "date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_ec0e3ee3-4f1d-44ca-b679-8cdb47b6c61b"
+                },
+                "isDefault": true,
+                "relationship": "3df744a2-f76a-4b7f-966c-0487aaa803cb"
+              }
+            ]
+          },
+          {
+            "name": "Full Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1576e9e6-e13d-4797-9a71-a0bef0dabe32",
+            "sourceColumn": "Full Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "status_description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "description": "Part of status unspecified",
+            "lineageTag": "e226558c-53cb-4d68-83d6-32aa302fe3a7",
+            "sourceColumn": "status_description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Age ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "33daf868-2eee-4547-b9c5-c32b991b9768",
+            "sourceColumn": "Age ",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Age group",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eea4966e-21a8-4e9c-a08d-57c7c993b817",
+            "sourceColumn": "Age group",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "131ab7d1-d870-4b69-a9d9-936e55aa88fd",
+        "partitions": [
+          {
+            "name": "Billionairs",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"DESKTOP-IJ2GTSH\", \"MYSQLDB\"),",
+                "    dbo_Billionairs = Source{[Schema=\"dbo\",Item=\"Billionairs\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(dbo_Billionairs,{\"finalWorth\", \"country\", \"city\", \"industries\", \"countryOfCitizenship\", \"selfMade\", \"status\", \"gender\", \"birthDate\", \"lastName\", \"firstName\", \"date\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Other Columns\",{{\"finalWorth\", \"Wealth_Value\"}}),",
+                "    #\"Added Custom\" = Table.AddColumn(#\"Renamed Columns\", \"status_description\", each if [status] = \"D\" then \"Entrepreneur\" else if ",
+                "[status] = \"U\" then \"Inherited\" else [status]),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Added Custom\",{\"status\"}),",
+                "    #\"Merged Columns\" = Table.CombineColumns(#\"Removed Columns\",{\"firstName\", \"lastName\"},Combiner.CombineTextByDelimiter(\" \", QuoteStyle.None),\"Full Name\"),",
+                "    #\"Multiplied Column\" = Table.TransformColumns(#\"Merged Columns\", {{\"Wealth_Value\", each _ * 1000000, type number}}),",
+                "    #\"Inserted Year\" = Table.AddColumn(#\"Multiplied Column\", \"Age \", each Date.Year([date]) - Date.Year([birthDate])),",
+                "    #\"Inserted Range\" = Table.AddColumn(#\"Inserted Year\", \"Age group\", each let rangeSize = 10, offset = 1, inclusive = true, rangeIndex = Number.RoundDown(([#\"Age \"] - offset) / rangeSize) in Text.From(rangeIndex * rangeSize + offset, \"pl-PL\") & \"-\" & Text.From((rangeIndex + 1) * rangeSize + offset - (if inclusive then 1 else 0), \"pl-PL\"), type text)",
+                "in",
+                "    #\"Inserted Range\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_bd98ac46-e9b5-4c5f-a9e2-0e0c1a8a3ad0",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "0414126a-125f-4a9f-b498-f6e3a7fa54f5",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "8c7c126a-90b8-44d7-afbb-1bb0e0fd888c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "06e96609-513b-4295-b0bf-bb5a0d68c64d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "8f81b17d-4e74-490d-8ea5-ae7714ecd585",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "c6f146a2-d48c-47bd-b1ad-5e4748019bd0",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "1ec17804-901c-457d-a757-e607e3ed597e",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "2cbd46d1-f981-41ee-bade-30eb6f6882e1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "e876260f-00fe-45ff-b652-048899faad25",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "93a4ac04-6914-4722-88d1-43ffed1fa1cc",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "3b79f25d-5922-4517-9773-de241cf83ffa",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "47c5fb16-4df2-4ac5-abaf-2c285576f1d7",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "0b4b0a3e-b6c2-4a47-8b02-84d05287a3a2"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "8bfe0875-d880-4b6e-8e22-6e6c4fae0fb5",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_bd98ac46-e9b5-4c5f-a9e2-0e0c1a8a3ad0",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_9de9bae0-e753-493b-b81b-911080f33457",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "1f5ea002-4604-4655-adc2-677c54b85b39",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "07d3f337-acac-47f9-bcaf-0075c6d1e99a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "89466e6f-46ee-45b2-a337-8d16b1877e66",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "7d2043d9-cdcb-495e-9112-e5dc5b9d183c",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "6067be69-3e3d-4c8e-9e56-000e9c1fa5d0",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "8fd04d2f-e20b-4e90-a3dc-09d2648fdbfd",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "e511044f-d8f3-414f-bbb5-4de47b1164a8",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "c90b1e8e-c40e-48ff-ae2a-33f044983835",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "a3ae6dd2-3677-45e1-a4e1-cba77b620b21",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "f5d5a030-2326-4407-9a1c-ed1487d30207",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "ae45c3d3-bc17-4901-be63-1c147aa3d432",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "8f80551b-8e45-490e-b4e4-f1ab3ae09e35"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "3781ed70-3d14-4291-9fa1-8bbe381e0314",
+        "partitions": [
+          {
+            "name": "LocalDateTable_9de9bae0-e753-493b-b81b-911080f33457",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Billionairs'[birthDate])), 1, 1), Date(Year(MAX('Billionairs'[birthDate])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_ec0e3ee3-4f1d-44ca-b679-8cdb47b6c61b",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "4fa46178-a3b8-4faa-a5a3-090f2a61841f",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "150f94b8-3cba-481c-9be5-3af10f561880",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "feb64aef-cd7c-465d-9644-e7d3aacf51c6",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "9167053f-1203-41ba-a352-b099bc8a47de",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "19cd3f7d-a72d-4da2-a997-46bdeb9a70f3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "a279672d-a61c-49b5-b9af-57db7fe4bfd4",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "8a306d85-9874-43a2-90a1-dff8a109fedd",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "9d28bd3c-faf1-42a8-b5be-20db13eae319",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "9b5cf06a-e908-454d-b7e1-a068590bc3bf",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "317ff0e0-9095-4ed9-b250-36f7faa08319",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "61fb1f48-5941-4cc9-88b3-33821c53e9c4",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "9b033c96-8cc8-40a4-8ae5-1285e71c66e6"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "4b452cd5-a3a1-40dc-87b2-5f7b47591003",
+        "partitions": [
+          {
+            "name": "LocalDateTable_ec0e3ee3-4f1d-44ca-b679-8cdb47b6c61b",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Billionairs'[date])), 1, 1), Date(Year(MAX('Billionairs'[date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "Country",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1c56df02-b772-48e8-92a5-9c7a85f7fa1e",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cpi_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Consumer Price Index (CPI) for the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "76fdfd56-9d8c-4d81-a902-8bb1dd3482f8",
+            "sourceColumn": "cpi_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cpi_change_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "CPI change for the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "6b7155b1-5364-459c-bcf7-09fc8be8f612",
+            "sourceColumn": "cpi_change_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gdp_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Gross Domestic Product (GDP) for the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "a471a0c5-8dd8-4d3d-ab71-a0dca55a7eb4",
+            "sourceColumn": "gdp_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gross_tertiary_education_enrollment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Enrollment in tertiary education in the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "86ba377e-5aa7-4f95-afbc-85c4d0ee57e6",
+            "sourceColumn": "gross_tertiary_education_enrollment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gross_primary_education_enrollment_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Enrollment in primary education in the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "e64c83ea-b6d4-4229-91d4-53d8c5a5328a",
+            "sourceColumn": "gross_primary_education_enrollment_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "life_expectancy_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Life expectancy in the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "c23a1e38-5e25-4edd-aea7-aa2e89e79a5b",
+            "sourceColumn": "life_expectancy_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tax_revenue_country_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Tax revenue in the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "8c04e242-3414-4117-a658-06f6a6783226",
+            "sourceColumn": "tax_revenue_country_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_tax_rate_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Total tax rate in the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "446c8a0f-2e09-431b-93a9-4f16d228502b",
+            "sourceColumn": "total_tax_rate_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "population_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "description": "Population of the billionaire's country.",
+            "isHidden": true,
+            "lineageTag": "3cc3739c-e90d-4397-b9ae-b84516197f3b",
+            "sourceColumn": "population_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitude_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "16461ba1-8d40-4f63-834b-ad252b1033fe",
+            "sourceColumn": "latitude_country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "longitude_country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "75bbdcfc-47a3-418e-a34d-62febdb00f77",
+            "sourceColumn": "longitude_country",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3416a1bb-8ebf-4d53-93d6-88b18e3a33c7",
+        "partitions": [
+          {
+            "name": "Country",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Sql.Database(\"DESKTOP-IJ2GTSH\", \"MYSQLDB\"),",
+                "    dbo_Billionairs = Source{[Schema=\"dbo\",Item=\"Billionairs\"]}[Data],",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(dbo_Billionairs,{\"country\", \"cpi_country\", \"cpi_change_country\", \"gdp_country\", \"gross_tertiary_education_enrollment\", \"gross_primary_education_enrollment_country\", \"life_expectancy_country\", \"tax_revenue_country_country\", \"total_tax_rate_country\", \"population_country\", \"latitude_country\", \"longitude_country\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Other Columns\", each ([country] <> null)),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Filtered Rows\")",
+                "in",
+                "    #\"Removed Duplicates\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Wealth Dimension",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "1b7d6cd708da4e898f011ecadc323d91"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Wealth Dimension",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "f5957acc-c2ea-4f74-82d9-e0248faa581c",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Wealth Dimension Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Wealth Dimension Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Wealth Dimension Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "5fe7233d-8f90-48da-b040-27f9c2eb313d",
+            "sortByColumn": "Wealth Dimension Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Wealth Dimension Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "f920fa64-e3df-4ba8-917a-ce697b939e60",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "description": "used to select the dimension through which the data is viewed ",
+        "lineageTag": "a3df8262-b079-4337-99d4-7664030338d3",
+        "partitions": [
+          {
+            "name": "Wealth Dimension",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Country\", NAMEOF('Billionairs'[country]), 0),",
+                "    (\"Industries\", NAMEOF('Billionairs'[industries]), 1),",
+                "    (\"People\", NAMEOF('Billionairs'[Full Name]), 2)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Items",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "bf9b4c3a7c1e4c0fb9c8a074ea39cece"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Parameter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "be91de31-6cc8-409d-bd08-4e0be8e59557",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "description": "used to select the top first ranked values ",
+        "lineageTag": "94074740-310c-44d1-a718-7bb459507bd0",
+        "measures": [
+          {
+            "name": "Parameter Value",
+            "expression": "SELECTEDVALUE('Items'[Parameter], 10)",
+            "formatString": "0",
+            "lineageTag": "031bf870-b03f-4b1e-b62b-b51e784f0236"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Items",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 100, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Indicator",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "8ff34511357b405dae42334659c02994"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Indicator",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "0544cb52-bfdc-41cf-bd40-e8209ebcf212",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Indicator Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Indicator Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Indicator Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "563bd653-f01c-449d-ba1c-be028e3b7712",
+            "sortByColumn": "Indicator Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Indicator Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "c4c62949-e8a4-4e24-8eb4-f0562e5cbdc4",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "description": "used to select the index measure presented in the scatter plot ",
+        "lineageTag": "73fad53d-5d72-4e1c-8516-5300cd65cc90",
+        "partitions": [
+          {
+            "name": "Indicator",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"CPI\", NAMEOF('_measures'[Sum of cpi_country]), 0),",
+                "    (\"CPI Change\", NAMEOF('_measures'[Sum of cpi_change_country]), 1),",
+                "    (\"GDP\", NAMEOF('_measures'[Sum of gdp_country]), 2),",
+                "    (\"Primary Education Enrollment\", NAMEOF('_measures'[Sum of gross_primary_education_enrollment_country]), 3),",
+                "    (\"Tertiay Education Enrollment\", NAMEOF('_measures'[Sum of gross_tertiary_education_enrollment]), 4),",
+                "    (\"Life Expectency\", NAMEOF('_measures'[Sum of life_expectancy_country]), 5),",
+                "    (\"Population\", NAMEOF('_measures'[Sum of population_country]), 6),",
+                "    (\"Tax Revenue\", NAMEOF('_measures'[Sum of tax_revenue_country_country]), 7),",
+                "    (\"Tax Rate\", NAMEOF('_measures'[Sum of total_tax_rate_country]), 8)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "_measures",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "5053fc890e67467fa50f3a3a377f6e16"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2943b352-4e41-4e6f-90a1-6a7d20a08565",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "a8acc741-1858-449a-97b7-f3806a35fcbf",
+        "measures": [
+          {
+            "name": "Wealth Value",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "description": "wealth value",
+            "expression": "SUM( Billionairs[Wealth_Value] )",
+            "lineageTag": "4a4b2349-61a3-48d7-99cb-6a5e2c923c51"
+          },
+          {
+            "name": "Number of Billionaires",
+            "description": [
+              "number of billionaires",
+              ""
+            ],
+            "expression": "SUMX( VALUES(Billionairs[Full Name]), 1 ) ",
+            "formatString": "0",
+            "lineageTag": "81fdc077-dfa1-4341-87e7-b1b536ece8fd"
+          },
+          {
+            "name": "field_parameter_selected_value",
+            "description": "measure associated with _top_by_dimension, indicates by which dimension the user wants to present data ",
+            "expression": [
+              "",
+              " var _field = ",
+              "SELECTCOLUMNS(",
+              "    SUMMARIZE( 'Wealth Dimension', 'Wealth Dimension'[Wealth Dimension], 'Wealth Dimension'[Wealth Dimension Fields]),",
+              "    'Wealth Dimension'[Wealth Dimension])",
+              "return ",
+              "    CONCATENATEX( _field, 'Wealth Dimension'[Wealth Dimension] , \",\")"
+            ],
+            "lineageTag": "ad485e92-5829-4f17-8db9-67fb017c48d3"
+          },
+          {
+            "name": "_top_by_dimension_view",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "description": "The measure was created for dynamic visualization, which displays the top number of billionaires based on the user's choices ",
+            "expression": [
+              "",
+              "VAR _top_n =",
+              "    SELECTEDVALUE ( Items[Parameter] )",
+              "VAR _Number_of_Billionaires_dimension = [field_parameter_selected_value]",
+              "VAR _country_view =",
+              "    VAR _table_for_top_country =",
+              "        CALCULATETABLE (",
+              "            ADDCOLUMNS ( VALUES ( Billionairs[country] ), \"Number_of_Billionaires\", [Number of Billionaires] ),",
+              "            ALLSELECTED ( Billionairs[country] )",
+              "        )",
+              "    VAR _top_country =",
+              "        TOPN ( _top_n, _table_for_top_country, [Number_of_Billionaires] )",
+              "    RETURN",
+              "        CALCULATE ( [Number of Billionaires], KEEPFILTERS ( _top_country ) )",
+              "VAR _industry_view =",
+              "    VAR _table_for_top_industries =",
+              "        CALCULATETABLE (",
+              "            ADDCOLUMNS ( VALUES ( Billionairs[industries] ), \"Number_of_Billionaires\", [Number of Billionaires] ),",
+              "            ALLSELECTED ( Billionairs[industries] )",
+              "        )",
+              "    VAR _top_industries =",
+              "        TOPN ( _top_n, _table_for_top_industries, [Number_of_Billionaires] )",
+              "    RETURN",
+              "        CALCULATE ( [Number of Billionaires], KEEPFILTERS ( _top_industries ) )",
+              "VAR _People_view =",
+              "    VAR _table_for_top_people =",
+              "        CALCULATETABLE (",
+              "            ADDCOLUMNS ( VALUES ( Billionairs[Full Name] ), \"Wealth\", [Wealth Value] ),",
+              "            ALLSELECTED ( Billionairs[Full Name] )",
+              "        )",
+              "    VAR _top_people =",
+              "        TOPN ( _top_n, _table_for_top_people, [Wealth Value] )",
+              "    RETURN",
+              "        CALCULATE ( [Wealth Value], KEEPFILTERS ( _top_people ) )",
+              "RETURN",
+              "    SWITCH (",
+              "        TRUE (),",
+              "        _Number_of_Billionaires_dimension = \"country\", _country_view,",
+              "        _Number_of_Billionaires_dimension = \"Industries\", _industry_view,",
+              "        _Number_of_Billionaires_dimension = \"People\", _People_view,",
+              "        BLANK ()",
+              "    )",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "lineageTag": "93a1c3d4-1d93-4b19-93ea-3643e9756122"
+          },
+          {
+            "name": "Number of female",
+            "description": "The number of female billionaires, a measure needed to visualize age and gender breakdowns ",
+            "expression": "CALCULATE( [Number of Billionaires], KEEPFILTERS( Billionairs[gender] = \"F\"))",
+            "formatString": "0",
+            "lineageTag": "5026cfc9-0417-4c15-b028-8665d2e73ad6"
+          },
+          {
+            "name": "Number of male",
+            "description": "The number of male billionaires, a measure needed to visualize age and gender breakdowns ",
+            "expression": "CALCULATE( [Number of Billionaires], KEEPFILTERS( Billionairs[gender] = \"M\"))",
+            "formatString": "0",
+            "lineageTag": "91d6b1a8-2070-40c6-a321-fb03a0bf703b"
+          },
+          {
+            "name": "Sum of cpi_change_country",
+            "description": "This measure is the sum of column 'Country'[cpi_change_country]",
+            "expression": "SUM('Country'[cpi_change_country])",
+            "formatString": "0.00",
+            "lineageTag": "d73a7498-1871-4874-bf98-755f35a6b04c"
+          },
+          {
+            "name": "Sum of cpi_country",
+            "description": "This measure is the sum of column 'Country'[cpi_country]",
+            "expression": "SUM('Country'[cpi_country])",
+            "formatString": "0.00",
+            "lineageTag": "a6db62be-675a-4f81-922e-c17a447fc807"
+          },
+          {
+            "name": "Sum of gdp_country",
+            "description": "This measure is the sum of column 'Country'[gdp_country]",
+            "expression": "SUM('Country'[gdp_country])",
+            "formatString": "0.00",
+            "lineageTag": "22f35ab1-127c-491a-bd12-c938b6f3d762"
+          },
+          {
+            "name": "Sum of gross_primary_education_enrollment_country",
+            "description": "This measure is the sum of column 'Country'[gross_primary_education_enrollment_country]",
+            "expression": "SUM('Country'[gross_primary_education_enrollment_country])",
+            "formatString": "0.00",
+            "lineageTag": "e3846b7c-c1de-4bf8-8674-eee6bf16a594"
+          },
+          {
+            "name": "Sum of gross_tertiary_education_enrollment",
+            "description": "This measure is the sum of column 'Country'[gross_tertiary_education_enrollment]",
+            "expression": "SUM('Country'[gross_tertiary_education_enrollment])",
+            "formatString": "0.00",
+            "lineageTag": "3c5e9eea-1464-445e-8c14-661e31ac561b"
+          },
+          {
+            "name": "Sum of life_expectancy_country",
+            "description": "This measure is the sum of column 'Country'[life_expectancy_country]",
+            "expression": "SUM('Country'[life_expectancy_country])",
+            "formatString": "0.00",
+            "lineageTag": "f3d6f892-fd5c-4ab4-a57f-8adbb8b01c50"
+          },
+          {
+            "name": "Sum of population_country",
+            "description": "This measure is the sum of column 'Country'[population_country]",
+            "expression": "SUM('Country'[population_country])",
+            "formatString": "0.00",
+            "lineageTag": "a87dd079-0a6f-45b3-af0d-050c8fcdc62d"
+          },
+          {
+            "name": "Sum of tax_revenue_country_country",
+            "description": "This measure is the sum of column 'Country'[tax_revenue_country_country]",
+            "expression": "SUM('Country'[tax_revenue_country_country])",
+            "formatString": "0.00",
+            "lineageTag": "39bff4c0-bb6e-4153-b8b4-0cf0952af2ec"
+          },
+          {
+            "name": "Sum of total_tax_rate_country",
+            "description": "This measure is the sum of column 'Country'[total_tax_rate_country]",
+            "expression": "SUM('Country'[total_tax_rate_country])",
+            "formatString": "0.00",
+            "lineageTag": "24fd2cf9-06b3-46a6-a1dc-aa6ab760217f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_measures",
+            "mode": "import",
+            "source": {
+              "expression": "{1} ",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 1.5075311430288123
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 777.07618416846742,
+            "y": 540.4479609699298
+          },
+          "nodeIndex": "Billionairs",
+          "nodeLineageTag": "131ab7d1-d870-4b69-a9d9-936e55aa88fd",
+          "size": {
+            "height": 423.61755372836251,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1250.4688384389319,
+            "y": 442.38439575483488
+          },
+          "nodeIndex": "Country",
+          "nodeLineageTag": "3416a1bb-8ebf-4d53-93d6-88b18e3a33c7",
+          "size": {
+            "height": 666.3300677560012,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1009.4232092731203,
+            "y": 188.38623072606174
+          },
+          "nodeIndex": "Wealth Dimension",
+          "nodeLineageTag": "a3df8262-b079-4337-99d4-7664030338d3",
+          "size": {
+            "height": 201.02380898041019,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1307.3715516621271,
+            "y": 173.76201594318371
+          },
+          "nodeIndex": "Indicator",
+          "nodeLineageTag": "73fad53d-5d72-4e1c-8516-5300cd65cc90",
+          "size": {
+            "height": 204.79487120967258,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 421.51942687003225,
+            "y": 189.24494039108561
+          },
+          "nodeIndex": "_measures",
+          "nodeLineageTag": "a8acc741-1858-449a-97b7-f3806a35fcbf",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 742.067290584004,
+            "y": 183.0783320182183
+          },
+          "nodeIndex": "Items",
+          "nodeLineageTag": "94074740-310c-44d1-a718-7bb459507bd0",
+          "size": {
+            "height": 203.88766811060088,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 66.333621340046022,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
