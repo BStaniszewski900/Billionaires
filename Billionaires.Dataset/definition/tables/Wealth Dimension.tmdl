@@ -1,4 +1,4 @@
-/// used to select the dimension through which the data is viewed 
+/// used to select the dimension through which the data is viewed
 table 'Wealth Dimension'
 	lineageTag: a3df8262-b079-4337-99d4-7664030338d3
 

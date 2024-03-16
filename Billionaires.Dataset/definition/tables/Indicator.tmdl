@@ -1,4 +1,4 @@
-/// used to select the index measure presented in the scatter plot 
+/// used to select the index measure presented in the scatter plot
 table Indicator
 	lineageTag: 73fad53d-5d72-4e1c-8516-5300cd65cc90
 

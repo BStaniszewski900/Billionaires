@@ -15,7 +15,7 @@ table _measures
 		formatString: 0
 		lineageTag: 81fdc077-dfa1-4341-87e7-b1b536ece8fd
 
-	/// measure associated with _top_by_dimension, indicates by which dimension the user wants to present data 
+	/// measure associated with _top_by_dimension, indicates by which dimension the user wants to present data
 	measure field_parameter_selected_value = ```
 			
 			 var _field = 
@@ -27,7 +27,7 @@ table _measures
 			```
 		lineageTag: ad485e92-5829-4f17-8db9-67fb017c48d3
 
-	/// The measure was created for dynamic visualization, which displays the top number of billionaires based on the user's choices 
+	/// The measure was created for dynamic visualization, which displays the top number of billionaires based on the user's choices
 	measure _top_by_dimension_view = ```
 			
 			VAR _top_n =
@@ -80,12 +80,12 @@ table _measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	/// The number of female billionaires, a measure needed to visualize age and gender breakdowns 
+	/// The number of female billionaires, a measure needed to visualize age and gender breakdowns
 	measure 'Number of female' = CALCULATE( [Number of Billionaires], KEEPFILTERS( Billionairs[gender] = "F"))
 		formatString: 0
 		lineageTag: 5026cfc9-0417-4c15-b028-8665d2e73ad6
 
-	/// The number of male billionaires, a measure needed to visualize age and gender breakdowns 
+	/// The number of male billionaires, a measure needed to visualize age and gender breakdowns
 	measure 'Number of male' = CALCULATE( [Number of Billionaires], KEEPFILTERS( Billionairs[gender] = "M"))
 		formatString: 0
 		lineageTag: 91d6b1a8-2070-40c6-a321-fb03a0bf703b
