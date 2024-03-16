@@ -1,0 +1,62 @@
+/// used to select the index measure presented in the scatter plot 
+table Indicator
+	lineageTag: 73fad53d-5d72-4e1c-8516-5300cd65cc90
+
+	column Indicator
+		dataType: string
+		lineageTag: 0544cb52-bfdc-41cf-bd40-e8209ebcf212
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Indicator Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Indicator Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Indicator Fields'
+		dataType: string
+		isHidden
+		lineageTag: 563bd653-f01c-449d-ba1c-be028e3b7712
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Indicator Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Indicator Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c4c62949-e8a4-4e24-8eb4-f0562e5cbdc4
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Indicator = calculated
+		mode: import
+		source =
+				{
+				    ("CPI", NAMEOF('_measures'[Sum of cpi_country]), 0),
+				    ("CPI Change", NAMEOF('_measures'[Sum of cpi_change_country]), 1),
+				    ("GDP", NAMEOF('_measures'[Sum of gdp_country]), 2),
+				    ("Primary Education Enrollment", NAMEOF('_measures'[Sum of gross_primary_education_enrollment_country]), 3),
+				    ("Tertiay Education Enrollment", NAMEOF('_measures'[Sum of gross_tertiary_education_enrollment]), 4),
+				    ("Life Expectency", NAMEOF('_measures'[Sum of life_expectancy_country]), 5),
+				    ("Population", NAMEOF('_measures'[Sum of population_country]), 6),
+				    ("Tax Revenue", NAMEOF('_measures'[Sum of tax_revenue_country_country]), 7),
+				    ("Tax Rate", NAMEOF('_measures'[Sum of total_tax_rate_country]), 8)
+				}
+
+	annotation PBI_Id = 8ff34511357b405dae42334659c02994
+

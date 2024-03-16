@@ -1,0 +1,14 @@
+relationship 353e31eb-c4b2-4876-ac4e-6041de3a5c61
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Billionairs.birthDate
+	toColumn: LocalDateTable_9de9bae0-e753-493b-b81b-911080f33457.Date
+
+relationship 3df744a2-f76a-4b7f-966c-0487aaa803cb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Billionairs.date
+	toColumn: LocalDateTable_ec0e3ee3-4f1d-44ca-b679-8cdb47b6c61b.Date
+
+relationship 6c29d28b-6591-4da6-8381-ac616550784c
+	fromColumn: Billionairs.country
+	toColumn: Country.country
+

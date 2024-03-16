@@ -1,0 +1,151 @@
+table Billionairs
+	lineageTag: 131ab7d1-d870-4b69-a9d9-936e55aa88fd
+
+	/// The final net worth of the billionaire in U.S. dollars.
+	column Wealth_Value
+		dataType: double
+		formatString: #,0
+		lineageTag: 2aeda4d8-0fb7-4438-b380-2e3ed326d8e8
+		summarizeBy: sum
+		sourceColumn: Wealth_Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 5f6db1f8-84cf-40d6-b4b2-fd8bffa92844
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 7c190b98-7693-4cbd-8d4f-8dc9c8d0e06c
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	/// The industries associated with the billionaire's business interests.
+	column industries
+		dataType: string
+		lineageTag: 4ecf6c65-7bf0-4d09-8d19-cb9c9cf2a22a
+		summarizeBy: none
+		sourceColumn: industries
+
+		annotation SummarizationSetBy = Automatic
+
+	column countryOfCitizenship
+		dataType: string
+		lineageTag: 53465a93-a980-40f2-b9c3-32bcc1841ba2
+		summarizeBy: none
+		sourceColumn: countryOfCitizenship
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates whether the billionaire is self-made (True/False).
+	column selfMade
+		dataType: string
+		lineageTag: 959ab1e2-b538-4dab-b4d2-c3b2132a17e0
+		summarizeBy: none
+		sourceColumn: selfMade
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: b79f026e-b8f4-4a5a-953a-6d13e8d9fe44
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column birthDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f5f7a4d9-bf03-408f-bb14-a0e85af42b9b
+		summarizeBy: none
+		sourceColumn: birthDate
+
+		variation Variation
+			isDefault
+			relationship: 353e31eb-c4b2-4876-ac4e-6041de3a5c61
+			defaultHierarchy: LocalDateTable_9de9bae0-e753-493b-b81b-911080f33457.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1340ad97-f40b-44e4-b489-026b919b9524
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 3df744a2-f76a-4b7f-966c-0487aaa803cb
+			defaultHierarchy: LocalDateTable_ec0e3ee3-4f1d-44ca-b679-8cdb47b6c61b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Full Name'
+		dataType: string
+		lineageTag: 1576e9e6-e13d-4797-9a71-a0bef0dabe32
+		summarizeBy: none
+		sourceColumn: Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Part of status unspecified
+	column status_description
+		dataType: string
+		lineageTag: e226558c-53cb-4d68-83d6-32aa302fe3a7
+		summarizeBy: none
+		sourceColumn: status_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age '
+		dataType: string
+		lineageTag: 33daf868-2eee-4547-b9c5-c32b991b9768
+		summarizeBy: none
+		sourceColumn: "Age "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age group'
+		dataType: string
+		lineageTag: eea4966e-21a8-4e9c-a08d-57c7c993b817
+		summarizeBy: none
+		sourceColumn: Age group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Billionairs = m
+		mode: import
+		source = ```
+				let
+				    Source = Sql.Database("DESKTOP-IJ2GTSH", "MYSQLDB"),
+				    dbo_Billionairs = Source{[Schema="dbo",Item="Billionairs"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_Billionairs,{"finalWorth", "country", "city", "industries", "countryOfCitizenship", "selfMade", "status", "gender", "birthDate", "lastName", "firstName", "date"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"finalWorth", "Wealth_Value"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "status_description", each if [status] = "D" then "Entrepreneur" else if 
+				[status] = "U" then "Inherited" else [status]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"status"}),
+				    #"Merged Columns" = Table.CombineColumns(#"Removed Columns",{"firstName", "lastName"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Full Name"),
+				    #"Multiplied Column" = Table.TransformColumns(#"Merged Columns", {{"Wealth_Value", each _ * 1000000, type number}}),
+				    #"Inserted Year" = Table.AddColumn(#"Multiplied Column", "Age ", each Date.Year([date]) - Date.Year([birthDate])),
+				    #"Inserted Range" = Table.AddColumn(#"Inserted Year", "Age group", each let rangeSize = 10, offset = 1, inclusive = true, rangeIndex = Number.RoundDown(([#"Age "] - offset) / rangeSize) in Text.From(rangeIndex * rangeSize + offset, "pl-PL") & "-" & Text.From((rangeIndex + 1) * rangeSize + offset - (if inclusive then 1 else 0), "pl-PL"), type text)
+				in
+				    #"Inserted Range"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

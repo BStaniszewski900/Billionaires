@@ -1,0 +1,156 @@
+table _measures
+	lineageTag: a8acc741-1858-449a-97b7-f3806a35fcbf
+
+	/// wealth value
+	measure 'Wealth Value' = SUM( Billionairs[Wealth_Value] )
+		lineageTag: 4a4b2349-61a3-48d7-99cb-6a5e2c923c51
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// number of billionaires
+	/// 
+	measure 'Number of Billionaires' = ```
+			SUMX( VALUES(Billionairs[Full Name]), 1 ) 
+			```
+		formatString: 0
+		lineageTag: 81fdc077-dfa1-4341-87e7-b1b536ece8fd
+
+	/// measure associated with _top_by_dimension, indicates by which dimension the user wants to present data 
+	measure field_parameter_selected_value = ```
+			
+			 var _field = 
+			SELECTCOLUMNS(
+			    SUMMARIZE( 'Wealth Dimension', 'Wealth Dimension'[Wealth Dimension], 'Wealth Dimension'[Wealth Dimension Fields]),
+			    'Wealth Dimension'[Wealth Dimension])
+			return 
+			    CONCATENATEX( _field, 'Wealth Dimension'[Wealth Dimension] , ",")
+			```
+		lineageTag: ad485e92-5829-4f17-8db9-67fb017c48d3
+
+	/// The measure was created for dynamic visualization, which displays the top number of billionaires based on the user's choices 
+	measure _top_by_dimension_view = ```
+			
+			VAR _top_n =
+			    SELECTEDVALUE ( Items[Parameter] )
+			VAR _Number_of_Billionaires_dimension = [field_parameter_selected_value]
+			VAR _country_view =
+			    VAR _table_for_top_country =
+			        CALCULATETABLE (
+			            ADDCOLUMNS ( VALUES ( Billionairs[country] ), "Number_of_Billionaires", [Number of Billionaires] ),
+			            ALLSELECTED ( Billionairs[country] )
+			        )
+			    VAR _top_country =
+			        TOPN ( _top_n, _table_for_top_country, [Number_of_Billionaires] )
+			    RETURN
+			        CALCULATE ( [Number of Billionaires], KEEPFILTERS ( _top_country ) )
+			VAR _industry_view =
+			    VAR _table_for_top_industries =
+			        CALCULATETABLE (
+			            ADDCOLUMNS ( VALUES ( Billionairs[industries] ), "Number_of_Billionaires", [Number of Billionaires] ),
+			            ALLSELECTED ( Billionairs[industries] )
+			        )
+			    VAR _top_industries =
+			        TOPN ( _top_n, _table_for_top_industries, [Number_of_Billionaires] )
+			    RETURN
+			        CALCULATE ( [Number of Billionaires], KEEPFILTERS ( _top_industries ) )
+			VAR _People_view =
+			    VAR _table_for_top_people =
+			        CALCULATETABLE (
+			            ADDCOLUMNS ( VALUES ( Billionairs[Full Name] ), "Wealth", [Wealth Value] ),
+			            ALLSELECTED ( Billionairs[Full Name] )
+			        )
+			    VAR _top_people =
+			        TOPN ( _top_n, _table_for_top_people, [Wealth Value] )
+			    RETURN
+			        CALCULATE ( [Wealth Value], KEEPFILTERS ( _top_people ) )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        _Number_of_Billionaires_dimension = "country", _country_view,
+			        _Number_of_Billionaires_dimension = "Industries", _industry_view,
+			        _Number_of_Billionaires_dimension = "People", _People_view,
+			        BLANK ()
+			    )
+			
+			
+			
+			
+			```
+		lineageTag: 93a1c3d4-1d93-4b19-93ea-3643e9756122
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// The number of female billionaires, a measure needed to visualize age and gender breakdowns 
+	measure 'Number of female' = CALCULATE( [Number of Billionaires], KEEPFILTERS( Billionairs[gender] = "F"))
+		formatString: 0
+		lineageTag: 5026cfc9-0417-4c15-b028-8665d2e73ad6
+
+	/// The number of male billionaires, a measure needed to visualize age and gender breakdowns 
+	measure 'Number of male' = CALCULATE( [Number of Billionaires], KEEPFILTERS( Billionairs[gender] = "M"))
+		formatString: 0
+		lineageTag: 91d6b1a8-2070-40c6-a321-fb03a0bf703b
+
+	/// This measure is the sum of column 'Country'[cpi_change_country]
+	measure 'Sum of cpi_change_country' = SUM('Country'[cpi_change_country])
+		formatString: 0.00
+		lineageTag: d73a7498-1871-4874-bf98-755f35a6b04c
+
+	/// This measure is the sum of column 'Country'[cpi_country]
+	measure 'Sum of cpi_country' = SUM('Country'[cpi_country])
+		formatString: 0.00
+		lineageTag: a6db62be-675a-4f81-922e-c17a447fc807
+
+	/// This measure is the sum of column 'Country'[gdp_country]
+	measure 'Sum of gdp_country' = SUM('Country'[gdp_country])
+		formatString: 0.00
+		lineageTag: 22f35ab1-127c-491a-bd12-c938b6f3d762
+
+	/// This measure is the sum of column 'Country'[gross_primary_education_enrollment_country]
+	measure 'Sum of gross_primary_education_enrollment_country' = SUM('Country'[gross_primary_education_enrollment_country])
+		formatString: 0.00
+		lineageTag: e3846b7c-c1de-4bf8-8674-eee6bf16a594
+
+	/// This measure is the sum of column 'Country'[gross_tertiary_education_enrollment]
+	measure 'Sum of gross_tertiary_education_enrollment' = SUM('Country'[gross_tertiary_education_enrollment])
+		formatString: 0.00
+		lineageTag: 3c5e9eea-1464-445e-8c14-661e31ac561b
+
+	/// This measure is the sum of column 'Country'[life_expectancy_country]
+	measure 'Sum of life_expectancy_country' = SUM('Country'[life_expectancy_country])
+		formatString: 0.00
+		lineageTag: f3d6f892-fd5c-4ab4-a57f-8adbb8b01c50
+
+	/// This measure is the sum of column 'Country'[population_country]
+	measure 'Sum of population_country' = SUM('Country'[population_country])
+		formatString: 0.00
+		lineageTag: a87dd079-0a6f-45b3-af0d-050c8fcdc62d
+
+	/// This measure is the sum of column 'Country'[tax_revenue_country_country]
+	measure 'Sum of tax_revenue_country_country' = SUM('Country'[tax_revenue_country_country])
+		formatString: 0.00
+		lineageTag: 39bff4c0-bb6e-4153-b8b4-0cf0952af2ec
+
+	/// This measure is the sum of column 'Country'[total_tax_rate_country]
+	measure 'Sum of total_tax_rate_country' = SUM('Country'[total_tax_rate_country])
+		formatString: 0.00
+		lineageTag: 24fd2cf9-06b3-46a6-a1dc-aa6ab760217f
+
+	column Value
+		dataType: int64
+		formatString: 0
+		lineageTag: 2943b352-4e41-4e6f-90a1-6a7d20a08565
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _measures = calculated
+		mode: import
+		source = ```
+				{1} 
+				```
+
+	annotation PBI_Id = 5053fc890e67467fa50f3a3a377f6e16
+

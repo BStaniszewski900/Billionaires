@@ -1,0 +1,56 @@
+/// used to select the dimension through which the data is viewed 
+table 'Wealth Dimension'
+	lineageTag: a3df8262-b079-4337-99d4-7664030338d3
+
+	column 'Wealth Dimension'
+		dataType: string
+		lineageTag: f5957acc-c2ea-4f74-82d9-e0248faa581c
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Wealth Dimension Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Wealth Dimension Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wealth Dimension Fields'
+		dataType: string
+		isHidden
+		lineageTag: 5fe7233d-8f90-48da-b040-27f9c2eb313d
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Wealth Dimension Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wealth Dimension Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f920fa64-e3df-4ba8-917a-ce697b939e60
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Wealth Dimension' = calculated
+		mode: import
+		source =
+				{
+				    ("Country", NAMEOF('Billionairs'[country]), 0),
+				    ("Industries", NAMEOF('Billionairs'[industries]), 1),
+				    ("People", NAMEOF('Billionairs'[Full Name]), 2)
+				}
+
+	annotation PBI_Id = 1b7d6cd708da4e898f011ecadc323d91
+

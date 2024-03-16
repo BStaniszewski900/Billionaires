@@ -1,0 +1,151 @@
+table Country
+	lineageTag: 3416a1bb-8ebf-4d53-93d6-88b18e3a33c7
+
+	column country
+		dataType: string
+		lineageTag: 1c56df02-b772-48e8-92a5-9c7a85f7fa1e
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Consumer Price Index (CPI) for the billionaire's country.
+	column cpi_country
+		dataType: double
+		isHidden
+		lineageTag: 76fdfd56-9d8c-4d81-a902-8bb1dd3482f8
+		summarizeBy: none
+		sourceColumn: cpi_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// CPI change for the billionaire's country.
+	column cpi_change_country
+		dataType: double
+		isHidden
+		lineageTag: 6b7155b1-5364-459c-bcf7-09fc8be8f612
+		summarizeBy: none
+		sourceColumn: cpi_change_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Gross Domestic Product (GDP) for the billionaire's country.
+	column gdp_country
+		dataType: double
+		isHidden
+		lineageTag: a471a0c5-8dd8-4d3d-ab71-a0dca55a7eb4
+		summarizeBy: none
+		sourceColumn: gdp_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Enrollment in tertiary education in the billionaire's country.
+	column gross_tertiary_education_enrollment
+		dataType: double
+		isHidden
+		lineageTag: 86ba377e-5aa7-4f95-afbc-85c4d0ee57e6
+		summarizeBy: none
+		sourceColumn: gross_tertiary_education_enrollment
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Enrollment in primary education in the billionaire's country.
+	column gross_primary_education_enrollment_country
+		dataType: double
+		isHidden
+		lineageTag: e64c83ea-b6d4-4229-91d4-53d8c5a5328a
+		summarizeBy: none
+		sourceColumn: gross_primary_education_enrollment_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Life expectancy in the billionaire's country.
+	column life_expectancy_country
+		dataType: double
+		isHidden
+		lineageTag: c23a1e38-5e25-4edd-aea7-aa2e89e79a5b
+		summarizeBy: none
+		sourceColumn: life_expectancy_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Tax revenue in the billionaire's country.
+	column tax_revenue_country_country
+		dataType: double
+		isHidden
+		lineageTag: 8c04e242-3414-4117-a658-06f6a6783226
+		summarizeBy: none
+		sourceColumn: tax_revenue_country_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total tax rate in the billionaire's country.
+	column total_tax_rate_country
+		dataType: double
+		isHidden
+		lineageTag: 446c8a0f-2e09-431b-93a9-4f16d228502b
+		summarizeBy: none
+		sourceColumn: total_tax_rate_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Population of the billionaire's country.
+	column population_country
+		dataType: double
+		isHidden
+		lineageTag: 3cc3739c-e90d-4397-b9ae-b84516197f3b
+		summarizeBy: none
+		sourceColumn: population_country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude_country
+		dataType: string
+		lineageTag: 16461ba1-8d40-4f63-834b-ad252b1033fe
+		summarizeBy: none
+		sourceColumn: latitude_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude_country
+		dataType: string
+		lineageTag: 75bbdcfc-47a3-418e-a34d-62febdb00f77
+		summarizeBy: none
+		sourceColumn: longitude_country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-IJ2GTSH", "MYSQLDB"),
+				    dbo_Billionairs = Source{[Schema="dbo",Item="Billionairs"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_Billionairs,{"country", "cpi_country", "cpi_change_country", "gdp_country", "gross_tertiary_education_enrollment", "gross_primary_education_enrollment_country", "life_expectancy_country", "tax_revenue_country_country", "total_tax_rate_country", "population_country", "latitude_country", "longitude_country"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Removed Other Columns", each ([country] <> null)),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Rows")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
