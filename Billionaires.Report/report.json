@@ -243,6 +243,36 @@
     },
     {
       "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection0a5e81aed6a35cfcec37",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"b7899d0b035d95bae574\",\"layouts\":[{\"id\":0,\"position\":{\"x\":129.6551724137931,\"y\":137.93103448275863,\"z\":1,\"width\":1106.2068965517242,\"height\":148.9655172413793,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_measures.Sum of cpi_change_country\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"_\",\"Entity\":\"_measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Sum of cpi_change_country\"},\"Name\":\"_measures.Sum of cpi_change_country\",\"NativeReferenceName\":\"Sum of cpi_change_country\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"_\"}},\"Property\":\"Sum of cpi_change_country\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 148.97,
+          "width": 1106.21,
+          "x": 129.66,
+          "y": 137.93,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"ba1220552982407b21ca\",\"layouts\":[{\"id\":0,\"position\":{\"x\":129.06103058800716,\"y\":329.6020165786029,\"z\":0,\"width\":1105.9537544233845,\"height\":103.24882447040574,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Cloud data transformation tool, typically made with Power Query Online \"}]},{\"textRuns\":[{\"value\":\"to re-centralize data/logic and scale Power Query transformations.\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 103.25,
+          "width": 1105.95,
+          "x": 129.06,
+          "y": 329.60,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
       "displayName": "Page 1",
       "displayOption": 1,
       "filters": "[]",

@@ -135,6 +135,11 @@ table _measures
 		formatString: 0.00
 		lineageTag: 24fd2cf9-06b3-46a6-a1dc-aa6ab760217f
 
+	measure PKB = [Sum of gdp_country]
+		lineageTag: cc53fa25-48a6-466a-bdba-ac82b22d2dbd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Value
 		dataType: int64
 		formatString: 0
